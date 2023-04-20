@@ -1,0 +1,12 @@
+#!/bin/sh
+#volume="$(amixer -D pipewire get Master | awk 'END{print $5}' | sed 's/\[//;s/%\]//')"
+#
+vol="$(amixer -D pipewire get Master | awk 'END{print $5 $6}')"
+if [ $(echo $vol | grep on) ]; then
+	mute=
+	sound="$(echo $vol | sed 's/\[//g;s/\]//g;s/%//;s/on//')"
+else
+	mute=
+	sound="$(echo $vol | sed 's/\[//g;s/\]//g;s/%//;s/off//')"
+fi
+echo "$mute $sound"

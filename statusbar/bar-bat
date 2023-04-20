@@ -1,0 +1,15 @@
+#!/bin/sh
+battery_level="$(cat /sys/class/power_supply/BAT1/capacity)"
+battery_stat="$(cat /sys/class/power_supply/BAT1/status)"
+
+[[ $battery_level -le 15 ]] && [[ "$battery_stat" != "Charging" ]] &&\
+       	echo " $battery_level" &&\
+       	notify-send --urgency=critical "Battery low, plug the charger in" && exit 0
+
+[[ $battery_level -ge 90 ]] && [[ "$battery_stat" == "Charging" ]] &&\
+       	echo "  $battery_level" &&\
+       	notify-send "Battery charged" && exit 0
+
+[[ "$battery_stat" == "Charging" ]] && echo " $battery_level" && exit 0
+
+echo " $battery_level"
