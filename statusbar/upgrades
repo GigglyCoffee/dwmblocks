@@ -1,0 +1,3 @@
+#!/bin/sh
+echo $(dnf list --upgrades --refresh | wc -l)
+
