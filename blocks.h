@@ -6,7 +6,7 @@ static const Block blocks[] = {
 	{"",     "~/.local/bin/statusbar/bar-volume", 			       	 0,	 	10    },
 	{"",     "~/.local/bin/statusbar/bar-bright", 				 0, 		12    },
 	{"",     "date +'%a %d %b %I:%M'",					60,		 0    },
-	{" ",     "~/.local/bin/statusbar/upgrades",                            300,              0    },
+	{" ",     "~/.local/bin/statusbar/upgrades",                         3600,              0    },
 };
 
 //sets delimeter between status commands. NULL character ('\0') means no delimeter.
