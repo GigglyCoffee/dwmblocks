@@ -1,3 +1,2 @@
 #!/bin/sh
-echo $(($(dnf list --upgrades --refresh | wc -l) - 6))
-
+echo $(dnf list -q --upgrades --refresh | wc -l)
