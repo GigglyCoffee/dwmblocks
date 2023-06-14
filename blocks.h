@@ -4,7 +4,7 @@ static const Block blocks[] = {
 	{"",    "free -h | awk '/^Mem/ { print $3 }' | sed s/i//g",	        30,		 0    },
 	{"",     "~/.local/bin/statusbar/bar-bat",                              30,              0    }, 
 	{"",     "~/.local/bin/statusbar/bar-volume", 			       	60,	 	10    },
-	/*{"",     "~/.local/bin/statusbar/bar-bright", 				 0, 		12    },*/
+	{"",     "~/.local/bin/statusbar/bar-bright", 				 0, 		12    },
 	{"",     "date +'%b %d[%w] %H:%M'",					60,		 0    },
 	{" ",     "~/.local/bin/statusbar/upgrades",                         3600,              0    },
 };
